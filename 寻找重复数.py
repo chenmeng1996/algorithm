@@ -12,6 +12,7 @@ def findDuplicate(nums: List[int]) -> int:
                 if count > 1:
                     return i
 
+
 if __name__ == '__main__':
     print(findDuplicate([1,3,4,2,2]))
     print(findDuplicate([3,1,3,4,2]))

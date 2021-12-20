@@ -1,4 +1,4 @@
-from tree.types import TreeNode
+from tree import TreeNode
 
 def flatten(root: TreeNode):
     """

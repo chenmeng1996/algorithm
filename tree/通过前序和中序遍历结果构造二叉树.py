@@ -1,6 +1,6 @@
 
 from typing import List
-from tree.types import TreeNode
+from tree import TreeNode
 
 def build_tree(pre: List[int], mid: List[int]) -> TreeNode:
     if len(pre) == 0:

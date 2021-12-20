@@ -1,6 +1,6 @@
 
 from typing import List
-from tree.types import TreeNode
+from tree import TreeNode
 
 def construct_max_tree(l: List[int]) -> TreeNode:
     """

@@ -1,6 +1,6 @@
 
 
-from tree.types import TreeNode
+from tree import TreeNode
 
 
 def invert_tree(root: TreeNode):

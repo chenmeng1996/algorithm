@@ -1,5 +1,5 @@
 
-from tree.types import TreeNode
+from tree import TreeNode
 
 def connect(root: TreeNode) -> TreeNode:
     """

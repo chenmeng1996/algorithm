@@ -1,8 +1,11 @@
-from tree import *
+ç
 import copy
 
 s = 0
 
+"""
+累加树：每个节点的新值等于原树中大于或等于原节点旧值的的节点值之和。
+"""
 def convert(root: TreeNode) -> TreeNode:
     """二叉搜索树的中序遍历是升序，反过来就是降序"""
     new_root = copy.deepcopy(root)

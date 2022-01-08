@@ -1,4 +1,4 @@
-ç
+from tree import *
 import copy
 
 s = 0

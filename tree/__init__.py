@@ -31,3 +31,6 @@ def print_tree(root: TreeNode):
         __print_tree(root.left)
         __print_tree(root.right)
     __print_tree(root)
+
+def build_tree1() -> TreeNode:
+    return build_tree([1, 2, 3, 4, None, None, None, None, None])

@@ -2,7 +2,7 @@ from tkinter import N
 from typing import List
 
 '''
-nums是无序数组，找出最长递增子序列的长度。子序列不一定是连续的。
+nums是无序数组, 找出最长递增子序列的长度。子序列不一定是连续的。
 dp[i]表示以数组下标i为结尾的最长递增子序列的长度。
 dp[n] = max(dp[1]+1, dp[2]+1, ..., dp[a]+1), 1<a<n且nums[a]<nums[n]
 '''

@@ -2,8 +2,7 @@
 from typing import List
 
 """
-所有的房屋都 围成一圈
-如果两间相邻的房屋在同一晚上被小偷闯入, 系统会自动报警
+https://leetcode.cn/problems/house-robber-ii/
 """
 def rob(nums: List[int]) -> int:
     """

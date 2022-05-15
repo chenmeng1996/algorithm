@@ -1,3 +1,6 @@
+from collections import deque
+
+
 # Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, x):
@@ -5,7 +8,6 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
-from collections import deque
 
 
 """
@@ -15,8 +17,7 @@ class Codec:
 
     def serialize(self, root):
         """
-        不正规的层次遍历.
-        使用队列。
+        不区分层的层次遍历.
         """
         s = []
         queue = deque()

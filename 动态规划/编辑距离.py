@@ -13,12 +13,15 @@ from queue import Empty
 
 
 def min_distance(s1: str, s2: str) -> int:
-    '''
+    """
+    二维动态规划
+
+    
     dp[i][j]表示s1[0:i]转换成s2[0:j]的最少操作数。
     如果s1[i-1] = s2[j-1], 则dp[i][j] = dp[i-1][j-1]
     如果s1[i-1] != s2[j-1], 则dp[i][j] = 1 + min(dp[i-1][j-1], dp[i-1][j], dp[i][j-1])
     dp[i-1][j-1] 表示替换操作, dp[i-1][j]表示删除操作, dp[i][j-1]表示插入操作。
-    '''
+    """
     dp = [[0 for _ in range(len(s2)+1)] for _ in range(len(s1)+1)]
     for i in range(1, len(s1)+1):
         dp[i][0] = i

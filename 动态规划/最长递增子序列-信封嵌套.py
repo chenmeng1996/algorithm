@@ -1,7 +1,6 @@
 
 
 import bisect
-import functools
 from typing import List
 
 
@@ -15,6 +14,20 @@ def max_envelopes(envelopes: List[List[int]]) -> int:
 
     时间复杂度O(nlogn)
     """
+
+    def length_of_LIS(nums: List[int]) -> int:
+        """
+        贪心算法求最长递增子序列
+        """
+        d = []
+        for v in nums:
+            if len(d) == 0 or v > d[-1]:
+                d.append(v)
+            else:
+                index = bisect.bisect_left(d, v)
+                d[index] = v
+        return len(d)
+
     def compare(x, y):
         if x[0] < y[0]:
             return -1
@@ -35,22 +48,7 @@ def max_envelopes(envelopes: List[List[int]]) -> int:
         nums.append(v[1])
     return length_of_LIS(nums)
 
-def length_of_LIS(nums: List[int]) -> int:
-    """
-    贪心 + 二分查找  时间复杂度O(nlogn)
 
-    贪心思想：如果要使上升子序列尽可能长，则我们需要使序列上升的尽可能慢，因此希望在每次序列尾部增加的元素尽可能小。
-
-    时间复杂度: O(nlogn)
-    """
-    d = []
-    for v in nums:
-        if len(d) == 0 or v > d[-1]:
-            d.append(v)
-        else:
-            index = bisect.bisect_left(d, v)
-            d[index] = v
-    return len(d)
     
 
 if __name__ == "__main__":

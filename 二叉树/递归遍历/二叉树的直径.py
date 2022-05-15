@@ -11,18 +11,15 @@ class TreeNode:
 """
 https://leetcode-cn.com/problems/diameter-of-binary-tree/
 """
-
 def diameterOfBinaryTree(root: Optional[TreeNode]) -> int:
     """
     最大直径有两种情况：
-    1. 经过根节点，res = 左子树的单向最长路径 + 右子树的单向最长路径 + 1
+    1. 经过根节点，res = 左子树的深度 + 右子树的深度 + 1
     2. 不经过根节点，res = max(左子树的最大直径, 右子树的最大直径)
     两种情况都计算，取较大者。
     """
     def helper(root, res):
-        """
-        返回单向最长路径
-        """
+        """返回树的深度"""
         if root is None:
             return 0
         left_len = helper(root.left, res)

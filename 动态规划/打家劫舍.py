@@ -2,7 +2,7 @@
 from typing import List
 
 """
-如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警
+https://leetcode.cn/problems/house-robber/
 """
 def rob(nums: List[int]) -> int:
     """

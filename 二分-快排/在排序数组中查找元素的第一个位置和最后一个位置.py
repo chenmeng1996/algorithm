@@ -1,10 +1,15 @@
 
 from typing import List
 
+"""
+https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/
+"""
 def searchRange(nums: List[int], target: int) -> List[int]:
     """
-    二分查找 
-    时间复杂度: logN
+    二分查找。时间复杂度: O(logn)
+
+    1. 先二分查找, 找到其中一个元素的位置。
+    2. 向前和向后寻找相同元素。
     """
     start = 0
     end = len(nums) - 1

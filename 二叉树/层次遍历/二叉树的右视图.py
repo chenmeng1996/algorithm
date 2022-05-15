@@ -7,7 +7,9 @@ class TreeNode:
         self.left = left
         self.right = right
 
-
+"""
+https://leetcode.cn/problems/binary-tree-right-side-view/
+"""
 def rightSideView(root: TreeNode) -> List[int]:
     """
     层次遍历, 输出每层元素的最后一个
@@ -22,6 +24,7 @@ def rightSideView(root: TreeNode) -> List[int]:
         length = len(que)
         for i in range(length):
             rt = que.popleft()
+            # 每层的最后一个元素
             if i == length - 1:
                 res.append(rt.val)
             if rt.left is not None:

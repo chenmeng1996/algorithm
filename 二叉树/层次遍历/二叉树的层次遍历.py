@@ -1,14 +1,28 @@
-from 二叉树 import TreeNode
-from queue import Queue
+from collections import deque
 
-def recursion(root: TreeNode):
-    q = Queue()
-    res = []
-    _recursion(root, q, res)
-    
-def _recursion(root: TreeNode, q: Queue, res: list):
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+"""
+https://leetcode.cn/problems/binary-tree-level-order-traversal/
+"""
+def levelOrder(root: TreeNode):
     if root is None:
-        return
-    res.append(root.value)
-    q.put(root.left)
-    q.put(root.right)
+        return []
+    que = deque()
+    res = []
+    que.append(root)
+    while que:
+        cur = []
+        for _ in range(len(que)):
+            x = que.popleft()
+            cur.append(x.val)
+            if x.left is not None:
+                que.append(x.left)
+            if x.right is not None:
+                que.append(x.right)
+        res.append(cur)
+    return res

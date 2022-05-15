@@ -6,8 +6,15 @@ class TreeNode:
         self.left = left
         self.right = right
 
+"""
+https://leetcode.cn/problems/balanced-binary-tree/
+"""
 def isBalanced(root: TreeNode) -> bool:
+    """
+    递归后序遍历。
+    """
     def helper(root):
+        """返回子树的高度"""
         if root is None:
             return True, 0
         left_balanced, left_height = helper(root.left)

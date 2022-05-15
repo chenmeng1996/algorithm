@@ -10,7 +10,8 @@ candidates中每个数字可以无限次使用。
 """
 def combinationSum(candidates: List[int], target: int) -> List[List[int]]:
     """
-    回溯。先对candidates排序。回溯时，后一个数字不能比前一个数字小。
+    回溯。
+    先对candidates排序。回溯时, 后一个数字不能比前一个数字小。
     """
     def helper(canditates, index, res, path, total):
         for i in range(index, len(candidates)):

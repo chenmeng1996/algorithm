@@ -55,13 +55,15 @@ def deleteNode(root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
             root.left = helper(root.left, key)
         else:
             # key在root节点
+            # key是叶子节点，叶子节点删除
             if root.left is None and root.right is None:
                 root =  None
+            # key有右孩子, 则寻找中序遍历的后继节点, 交换节点值, 并在右子树递归删除后继节点
             elif root.right is not None:
                 post = accessor(root)
                 root.val = post.val
-                # 在右子树删除后继节点
                 root.right = helper(root.right, post.val)
+            # 如果没有右孩子, 则寻找中序遍历的前继节点, 交换节点值，并在左子树递归删除前继节点
             else:
                 pre = predecessor(root)
                 root.val = pre.val

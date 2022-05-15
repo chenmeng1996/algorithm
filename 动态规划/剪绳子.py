@@ -1,3 +1,8 @@
+
+
+"""
+https://leetcode.cn/problems/jian-sheng-zi-lcof/
+"""
 def cuttingRope(n: int) -> int:
     """
     dp[i]表示长度为i的绳子剪切后的最大乘积。
@@ -6,7 +11,6 @@ def cuttingRope(n: int) -> int:
     dp[i] = max(dp[i-j] * j, i), 1<=j<=i-1
     """
     dp = [0]*(n+1)
-    cutted = False
     dp[1] = 1
 
     for i in range(2,n+1):

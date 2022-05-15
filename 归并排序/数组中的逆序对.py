@@ -8,7 +8,7 @@ https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/
 def reversePairs(nums: List[int]) -> int:
     """
     归并排序。
-    在合并两个有序数组时，如果选择合并后一个数组的某个数字，则证明该数字比前一个数组的所有数字都小，则逆序对个数增加前一个数组的当前长度。
+    在合并两个有序数组(设数组1和数组2)时, 如果选择合并数组2的某个数字, 则证明该数字比数组1的所有数字都小, 则逆序对个数增加数组1的当前长度。
     """
     def merge(nums, start1, end1, start2, end2, counter):
         new_nums = []

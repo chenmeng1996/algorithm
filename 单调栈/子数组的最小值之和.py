@@ -8,7 +8,7 @@ https://leetcode-cn.com/problems/sum-of-subarray-minimums/
 """
 def sumSubarrayMins(arr: List[int]) -> int:
     """
-    单调栈。
+    单调栈。TODO
     维护单调递增栈，栈里存储下标。目的是寻找一个元素是哪些子数组的最小值。
 
     每弹出一个元素，往前和往后寻找该元素为最小值的子数组。即寻找左边界和右边界。

@@ -4,7 +4,9 @@ https://leetcode-cn.com/problems/hanota-lcci/
 
 from typing import List
 
-
+"""
+https://leetcode.cn/problems/hanota-lcci/
+"""
 def hanota(A: List[int], B: List[int], C: List[int]) -> None:
     """
     Do not return anything, modify C in-place instead.

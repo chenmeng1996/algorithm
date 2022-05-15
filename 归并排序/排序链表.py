@@ -10,7 +10,8 @@ class ListNode:
 
 """
 https://leetcode-cn.com/problems/sort-list/
-要求时间复杂度：O(nlogn)，空间复杂度为常数
+
+要求时间复杂度: O(nlogn), 空间复杂度为常数
 """
 def sortList(head: Optional[ListNode]) -> Optional[ListNode]:
     """

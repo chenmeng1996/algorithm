@@ -4,7 +4,7 @@ from typing import List
 
 def findKthLargest(nums: List[int], k: int) -> int:
     """
-    使用快速排序的思想，但每次只需要快排大约一半的数组
+    使用快速排序的思想，但每次只需要快排大约一半的数组。
 
     或者使用小顶堆。
     """

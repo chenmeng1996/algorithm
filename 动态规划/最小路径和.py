@@ -6,6 +6,8 @@ https://leetcode-cn.com/problems/minimum-path-sum/
 """
 def minPathSum(grid: List[List[int]]) -> int:
     """
+    动态规划。
+    dp[i][j]表示从左上角到(i,j)位置的最小路径和。
     dp[i][j] = min(d[i-1][j], dp[i][j-1]) + grid[i][j]
     """
     if len(grid) == 0:

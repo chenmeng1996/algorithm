@@ -32,12 +32,15 @@ def myAtoi(s: str) -> int:
         
 
         def read(self, c: str):
+            # 更新当前状态
             self.state = self.table[self.state][self.get_index(c)]
             if self.state in ["start", "end"]:
                 return
+            # 记录正负号
             if self.state == "signed":
                 if c == "-":
                     self.signed = -1 
+            # 记录绝对值数字
             else:
                 self.res = self.res * 10 + int(c)
                 if self.signed * self.res < self.INT_MIN:

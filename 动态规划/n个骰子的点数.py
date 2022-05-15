@@ -3,6 +3,8 @@ from typing import List
 
 def dicesProbability(n: int) -> List[float]:
     """
+    二维动态规划。
+    
     n个骰子，一共有6**n种投递方式。只需要知道数字x有多少种投递方式即可。
     
     假设已知n-1个骰子，数字x-1, x-2, x-3, x-4, x-5, x-6的投递方式次数。

@@ -4,6 +4,9 @@ class ListNode:
         self.val = val
         self.next = next
 
+"""
+https://leetcode.cn/problems/reverse-nodes-in-k-group/
+"""
 def reverse_k(head: ListNode, k: int) -> ListNode:
     """
     递归。
@@ -33,6 +36,7 @@ def reverse_k(head: ListNode, k: int) -> ListNode:
                 post = post.next
             count += 1
         return pre
+        
     return reverse(head)
 
 

@@ -8,32 +8,18 @@ https://leetcode-cn.com/problems/decode-ways/
 def numDecodings_count(s: str) -> int:
     """
     动态规划, dp[i]表示前i个字符的组合数.
-    dp[i] = max(dp[i-1], dp[i-2]), 要注意一些条件
+    dp[i] = dp[i-1] + dp[i-2], 要注意一些条件:
+    1. 如果s[i] == "0", 则不能加上dp[i-1]
+    2. 如果s[i-1] == "0", 或者s[i-1:i+1], 则不能加上dp[i-2]
     """
-    if len(s) == 0:
-        return 0
-    dp = [0]*len(s)
-    for i in range(len(s)):
-        if s[i] == "0":
-            if i == 0 or s[i-1:i+1] == "00" or int(s[i-1:i+1]) > 26:
-                return 0
-        if i == 0:
-            dp[i] = 1
-        elif i == 1:
-            if s[i] != "0":
-                dp[i] = 1
-            else:
-                dp[i] = 0
-            if int(s[i-1:i+1]) <= 26:
-                dp[i] += 1
-        else:
-            if s[i] != "0":
-                dp[i] = dp[i-1]
-            else:
-                dp[i] = 0
-            if s[i-1] != "0" and int(s[i-1:i+1]) <= 26:
-                dp[i] = dp[i] + dp[i-2]
-    return dp[-1]
+    n = len(s)
+    f = [1] + [0] * n
+    for i in range(1, n + 1):
+        if s[i - 1] != '0':
+            f[i] += f[i - 1]
+        if i > 1 and s[i - 2] != '0' and int(s[i-2:i]) <= 26:
+            f[i] += f[i - 2]
+    return f[n]
 
 
 def numDecodings(s: str) -> int:

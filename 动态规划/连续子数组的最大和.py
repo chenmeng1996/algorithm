@@ -1,6 +1,24 @@
 from typing import List
 
 
+"""
+https://leetcode.cn/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/
+"""
+def maxSubArray(nums: List[int]) -> int:
+    """
+    动态规划。
+    dp[i]表示以i为终点的最大和。
+    则dp[n] = max(dp[n-1]+nums[n], nums[n])
+    """
+    if len(nums) == 0:
+        return 0
+    dp = [0] * len(nums)
+    dp[0] = nums[0]
+    for i in range(1, len(nums)):
+        dp[i] = max(dp[i-1]+nums[i], nums[i])
+    return max(dp)
+
+    
 def maxSubArray(nums: List[int]) -> int:
     """
     贪心。
@@ -21,16 +39,3 @@ def maxSubArray(nums: List[int]) -> int:
     return max_sum
 
 
-def maxSubArray(nums: List[int]) -> int:
-    """
-    动态规划。
-    dp[i]表示以i为终点的最大和。
-    则dp[n] = max(dp[n-1]+nums[n], nums[n])
-    """
-    if len(nums) == 0:
-        return 0
-    dp = [0] * len(nums)
-    dp[0] = nums[0]
-    for i in range(1, len(nums)):
-        dp[i] = max(dp[i-1]+nums[i], nums[i])
-    return max(dp)

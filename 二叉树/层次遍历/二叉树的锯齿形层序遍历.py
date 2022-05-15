@@ -1,8 +1,3 @@
-"""
-https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
-"""
-
-# Definition for a binary tree node.
 import collections
 import copy
 from typing import List

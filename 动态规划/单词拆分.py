@@ -8,6 +8,9 @@ https://leetcode-cn.com/problems/word-break/
 def wordBreak(s: str, wordDict: List[str]) -> bool:
     """
     动态规划。
+    背包问题-True/False问题
+    dp[i] = dp[i] or dp[i-num]
+
     dp[i]表示以i结尾的字符串，是否可以由字典拼接而成。
     dp[i] = (s[0:i+1] in wordDict) or (dp[0] is True and s[1:i+1] in wordDict) or .... or (dp[i-1] is True and s[i:i+1] in wordDict)
     """

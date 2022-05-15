@@ -1,14 +1,14 @@
 
-from typing import List
 
-a = {}
-a[None] = 0
-print(a)
-print(a[None])
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 """
-房屋组成了一个二叉树。
-不可以偷相连的房子。
+https://leetcode.cn/problems/house-robber-iii/
 """
 def rob(root: TreeNode) -> int:
     """

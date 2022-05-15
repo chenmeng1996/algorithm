@@ -3,23 +3,30 @@ from typing import List
 
 def generateParenthesis(n: int) -> List[str]:
     """
-    递归使用左括号和右括号，记录剩余的左括号数量和右括号数量。
-    如果剩余的左括号和右括号相同，则必须使用左括号。
-    如果剩余的左括号小于右括号，则使用左括号和右括号都可以，都需要试一下。
+    当前的括号是否有效: 左括号数量 >= 右括号数量
+
+    回溯法, 生成所有括号。
+    每次加括号, 有两种选择, 加左括号或者右括号
     """
     def helper(res, s, left, right):
         if right == 0:
-            res.append(s)
+            res.append("".join(cur))
             return
         if left == right:
-            helper(res, s+"(", left-1, right)
+            cur.append("(")
+            helper(res, cur, left-1, right)
+            cur.pop()
         else:
             if left > 0:
-                helper(res, s+"(", left-1, right)
-            helper(res, s+")", left, right-1)
+                cur.append("(")
+                helper(res, cur, left-1, right)
+                cur.pop()
+            cur.append(")")
+            helper(res, cur, left, right-1)
+            cur.pop()
     res = []
-    s = ""
-    helper(res, s, n, n)
+    cur = []
+    helper(res, cur, n, n)
     return res
 
 

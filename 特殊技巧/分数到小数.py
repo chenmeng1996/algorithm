@@ -2,12 +2,16 @@
 
 """
 https://leetcode-cn.com/problems/fraction-to-recurring-decimal/
+
+表示分数的分子 numerator 和分母 denominator，以 字符串形式返回小数 。
+
+如果小数部分为循环小数，则将循环的部分括在括号内。
+
+如果存在多个答案，只需返回 任意一个。
 """
 def fractionToDecimal(numerator: int, denominator: int) -> str:
     """
     长除法，模拟除法运算，记录余数。当出现重复余数时，即出现循环。
-
-    循环例子：821/370
     """
     if numerator == 0:
         return "0"

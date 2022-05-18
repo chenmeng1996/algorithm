@@ -1,14 +1,22 @@
 
-# 快速逼近
+
+"""
+https://leetcode.cn/problems/divide-two-integers/
+"""
 def divide(dividend: int, divisor: int) -> int:
     def div(dividend, divisor):
+        """
+        二分, 快速除法
+        """
         if dividend < divisor:
             return 0
         count = 1
         tmp_divisor = divisor
         while (tmp_divisor + tmp_divisor) < dividend:
-            tmp_divisor = tmp_divisor + tmp_divisor # 除数翻倍
-            count = count + count # 商翻倍
+            # 除数翻倍
+            tmp_divisor = tmp_divisor + tmp_divisor
+            # 商翻倍 
+            count = count + count
         return count + div(dividend - tmp_divisor, divisor)
 
     if dividend == 0:

@@ -5,7 +5,7 @@ import copy
 """
 https://leetcode-cn.com/problems/combination-sum-ii/
 
-candidates 中的每个数字在每个组合中只能使用 一次 。
+candidates中的每个数字在每个组合中只能使用一次。
 
 变种：如果每个数字可以使用两次呢？
 """

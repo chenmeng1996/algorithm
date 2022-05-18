@@ -3,6 +3,8 @@ from typing import List
 
 """
 https://leetcode.cn/problems/trapping-rain-water/
+
+柱子是一维数组。
 """
 def trap(height: List[int]) -> int:
     """

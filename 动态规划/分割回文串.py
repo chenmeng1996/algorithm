@@ -4,6 +4,8 @@ from typing import List
 
 """
 https://leetcode.cn/problems/palindrome-partitioning/
+
+给你一个字符串s,请你将s分割成一些子串, 使每个子串都是回文串。返回s所有可能的分割方案。
 """
 def partition(s: str) -> List[List[str]]:
     """

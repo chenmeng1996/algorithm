@@ -54,6 +54,41 @@ def maxDistance(grid: List[List[int]]) -> int:
 def maxDistance(grid: List[List[int]]) -> int:
     """
     多源bfs。
-    选择每个海洋作为起点, 通过bfs计算离它最近的陆地距离。
+
+    找出一个海洋单元格，这个海洋单元格到离它最近的陆地单元格的距离是最大的，并返回该距离。
+    等价于: 从所有陆地开始bfs, 最后遍历到的海洋。
+
+    选择所有陆地作为大的起点, 通过bfs计算离大起点最近的海洋距离。
+
+    时间复杂度: 遍历每个节点一次, 所以是O(n^2)
+    空间复杂度: O(n^2)
     """
-    pass
+    # BFS 宽度优先搜索 向外一层层扩散
+    n = len(grid)
+    land = []
+    for x in range(n):
+        for y in range(n):
+            if grid[x][y] == 1:
+                land.append([x, y])
+
+    if len(land) == 0 or len(land) == n*n:
+        return -1
+
+    res = -1
+
+    while land:
+        res += 1
+        # 储存即将检索的海洋坐标, 作为下一轮bfs的起点
+        new_land = [] 
+        for land_i, land_j in land:
+            for x, y in [(0,-1), (1,0), (0,1), (-1,0)]:
+                next_i, next_j = land_i + x, land_j + y
+                if next_i < 0 or next_i > n-1 or next_j < 0 or next_j > n-1:
+                    continue
+                # 遇见海洋, 将海洋设置为已访问
+                if grid[next_i][next_j] == 0:
+                    grid[next_i][next_j] = 2
+                    new_land.append((next_i, next_j))
+        land = new_land
+
+    return res

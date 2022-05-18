@@ -3,6 +3,8 @@ from typing import List
 
 """
 https://leetcode.cn/problems/house-robber/
+
+相邻不能同时偷。
 """
 def rob(nums: List[int]) -> int:
     """

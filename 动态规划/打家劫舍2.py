@@ -3,10 +3,12 @@ from typing import List
 
 """
 https://leetcode.cn/problems/house-robber-ii/
+
+围成一圈, 即首尾不能连续偷。
 """
 def rob(nums: List[int]) -> int:
     """
-    围成一圈, 即首尾不能连续偷.
+    
     那么可以分成两种情况：排除尾, 排除首
     这两种情况都计算一下, 取大值即可
     """

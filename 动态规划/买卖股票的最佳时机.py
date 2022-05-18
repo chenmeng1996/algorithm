@@ -2,6 +2,8 @@
 
 """
 https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+
+只能完成一笔交易。
 """
 from typing import List
 

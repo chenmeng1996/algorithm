@@ -2,10 +2,14 @@ from typing import List
 
 """
 https://leetcode.cn/problems/coin-change/
+
+凑成总金额所需的 最少的硬币个数。
 """
 def coinChange(coins: List[int], amount: int) -> int:
     """
-    背包问题-最大最小问题
+    完全背包
+
+    dp[i]表示凑出总金额为i的最少硬币个数。
 
     dp[i] = min(dp[i], dp[i-num]+1)
     或者

@@ -9,6 +9,8 @@ class TreeNode:
 
 """
 https://leetcode.cn/problems/house-robber-iii/
+
+相连树节点不能同时偷。
 """
 def rob(root: TreeNode) -> int:
     """

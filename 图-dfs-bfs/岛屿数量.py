@@ -1,9 +1,12 @@
 from typing import List
 
 
+"""
+https://leetcode.cn/problems/number-of-islands/
+"""
 def numIslands(grid: List[List[str]]) -> int:
     """
-    遍历每一个点作为起点，使用dfs或bfs寻找所有连接的点，寻找完后数量加1。
+    遍历每一个点作为起点, 使用dfs或bfs寻找所有连接的点, 寻找完后数量加1。
     使用辅助数组记录访问过的点。
     """
     if len(grid) == 0:

@@ -9,7 +9,7 @@ def minWindow(s: str, t: str) -> str:
     """
     滑动窗口。
     哈希表存储目标字符串的字符和个数。
-    在滑动窗口时，用哈希表记录目标字符个数。
+    在滑动窗口时, 用哈希表维护当前窗口的目标字符个数。
     """
     t_dic = defaultdict(int)
     for c in t:

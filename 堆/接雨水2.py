@@ -5,6 +5,8 @@ from typing import List
 
 """
 https://leetcode.cn/problems/trapping-rain-water-ii/
+
+柱子是一二维数组。
 """
 def trapRainWater(heightMap: List[List[int]]) -> int:
     """

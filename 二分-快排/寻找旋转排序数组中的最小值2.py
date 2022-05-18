@@ -4,6 +4,8 @@ from typing import List
 
 """
 https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array-ii/
+
+可能存在 重复 元素值。
 """
 def findMin(nums: List[int]) -> int:
     """

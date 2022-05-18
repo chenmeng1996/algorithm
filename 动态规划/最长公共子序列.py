@@ -8,8 +8,8 @@ def longest_common_subsequence(s1: str, s2: str):
     二维动态规划。
 
     dp[i][j]表示s1[0:i]和s2[0:j]的最长公共子序列长度
-    如果s1[i-1] = s2[j-1], 则dp[i][j] = dp[i-1][j-1] + 1
-    如果s1[i-1] != s2[j-1], 则dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+    1. 如果s1[i-1] = s2[j-1], 则dp[i][j] = dp[i-1][j-1] + 1
+    2. 如果s1[i-1] != s2[j-1], 则dp[i][j] = max(dp[i-1][j], dp[i][j-1])
     dp[0][j] = 0
     dp[i][0] = 0
 

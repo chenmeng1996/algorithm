@@ -11,6 +11,9 @@ https://leetcode.cn/problems/parallel-courses-ii/
 一个学期中，你 最多 可以同时上 k 门课，前提是这些课的先修课在之前的学期里已经上过了
 """
 def minNumberOfSemesters(n: int, relations: List[List[int]], k: int) -> int:
+    """
+    状态压缩dp
+    """
     @lru_cache(None)
     def dfs(st):
         if st == (1<<n) -1:

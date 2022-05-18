@@ -4,6 +4,8 @@ from typing import List
 
 """
 https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/
+
+元素值 互不相同。
 """
 def findMin(nums: List[int]) -> int:
     """

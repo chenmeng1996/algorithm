@@ -3,6 +3,8 @@ from copy import copy
 
 """
 https://leetcode-cn.com/problems/decode-ways/
+
+一条包含字母 A-Z 的消息通过以下映射进行了 编码 。
 """
 
 def numDecodings_count(s: str) -> int:

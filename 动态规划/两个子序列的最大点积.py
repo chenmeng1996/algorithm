@@ -13,4 +13,26 @@ https://leetcode.cn/problems/max-dot-product-of-two-subsequences/
 
 """
 def maxDotProduct(nums1: List[int], nums2: List[int]) -> int:
-    pass
+    """
+    f[i][j] 表示只考虑数组nums1的前i个元素以及数组nums2的前j个元素时,
+    可以得到的两个长度相同的非空子序列的最大点积。
+
+    可以考虑每个数组中的最后一个元素:
+    1. 选择成为点积。
+    2. 不选择成为点积。
+    """
+    m, n = len(nums1), len(nums2)
+    f = [[0] * n for _ in range(m)]
+    
+    for i in range(m):
+        for j in range(n):
+            xij = nums1[i] * nums2[j]
+            f[i][j] = xij
+            if i > 0:
+                f[i][j] = max(f[i][j], f[i - 1][j])
+            if j > 0:
+                f[i][j] = max(f[i][j], f[i][j - 1])
+            if i > 0 and j > 0:
+                f[i][j] = max(f[i][j], f[i - 1][j - 1] + xij)
+    
+    return f[m - 1][n - 1]
